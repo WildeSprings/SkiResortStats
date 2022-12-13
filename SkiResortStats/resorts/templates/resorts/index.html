@@ -1,0 +1,38 @@
+{% if resort_list %}
+    <table>
+        <tr>
+            <th> Name </th>
+            <th> Overnight </th>
+            <th> 24hr </th>
+            <th> 48hr </th>
+            <th> 72hr </th>
+            <th> 7day </th>
+            <th> 30day </th>
+            <th> Total </th>
+            <th> Base Depth </th>
+            <th> Open Lifts </th>
+            <th> Total Lifts </th>
+            <th> Open Trails </th>
+            <th> Total Trails </th>
+        </tr>
+        {% for resort in resort_list %}
+        <tr>
+            <th>{{resort.resort_name}}</th>
+            <th>{{resort.snow_overnight}}</th>
+            <th>{{resort.snow_24hrs}}</th>
+            <th>{{resort.snow_48hrs}}</th>
+            <th>{{resort.snow_72hrs}}</th>
+            <th>{{resort.snow_7days}}</th>
+            <th>{{resort.snow_30days}}</th>
+            <th>{{resort.snow_total}}</th>
+            <th>{{resort.snow_base_depth}}</th>
+            <th>{{resort.lifts_open}}</th>
+            <th>{{resort.lifts_total}}</th>
+            <th>{{resort.trails_open}}</th>
+            <th>{{resort.trails_total}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No resorts are available.</p>
+{% endif %}
