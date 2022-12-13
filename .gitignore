@@ -2,6 +2,8 @@
 
 # Created by https://www.gitignore.io/api/python,macos
 
+.env
+
 ### macOS ###
 # General
 .DS_Store
