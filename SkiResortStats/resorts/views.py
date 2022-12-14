@@ -4,7 +4,7 @@ from django.template import loader
 from .models import ActiveRecord
 
 def index(request):
-    resort_list = ActiveRecord.objects.all
+    resort_list = ActiveRecord.objects.all().order_by('resort_name').values()
     template = loader.get_template('resorts/index.html')
     context = {
         'resort_list': resort_list,
