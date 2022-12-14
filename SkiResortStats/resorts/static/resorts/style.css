@@ -1,0 +1,24 @@
+body {
+  background: #94b5c0;
+}
+
+.table {
+  background: #f0f0f0;
+  border-radius: 1rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  color: #212529;
+  margin-bottom: 0;
+}
+
+.table th:first-child,
+.table td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: #f0f0f0;
+  color: #373737;
+}
+
+.table td {
+  white-space: nowrap;
+}
