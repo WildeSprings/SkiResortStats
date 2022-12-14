@@ -9,56 +9,51 @@
         <link rel="stylesheet" href="{% static 'resorts/style.css' %}">
     </head>
     <body>
-        <div class="jumbotron text-center">
-            {% if resort_list %}
-            <div class="container">
-                <div class="row mt-3">
-                    <div class="col-1"></div>
-                    <div class="col-10">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> Name </th>
-                                        <th scope="col"> Overnight </th>
-                                        <th scope="col"> 24hr </th>
-                                        <th scope="col"> 48hr </th>
-                                        <th scope="col"> 72hr </th>
-                                        <th scope="col"> 7day </th>
-                                        <th scope="col"> 30day </th>
-                                        <th scope="col"> Total </th>
-                                        <th scope="col"> Base Depth </th>
-                                        <th scope="col"> Open Lifts </th>
-                                        <th scope="col"> Total Lifts </th>
-                                        <th scope="col"> Open Trails </th>
-                                        <th scope="col"> Total Trails </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for resort in resort_list %}
-                                    <tr>
-                                        <th scope="row">{{resort.resort_name}}</th>
-                                        <td>{{resort.snow_overnight}}</th>
-                                        <td>{{resort.snow_24hrs}}</th>
-                                        <td>{{resort.snow_48hrs}}</th>
-                                        <td>{{resort.snow_72hrs}}</th>
-                                        <td>{{resort.snow_7days}}</th>
-                                        <td>{{resort.snow_30days}}</th>
-                                        <td>{{resort.snow_total}}</th>
-                                        <td>{{resort.snow_base_depth}}</th>
-                                        <td>{{resort.lifts_open}}</th>
-                                        <td>{{resort.lifts_total}}</th>
-                                        <td>{{resort.trails_open}}</th>
-                                        <td>{{resort.trails_total}}</th>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                <div class="col-1"></div>
+        <div class="row mt-3"></div>
+        {% if resort_list %}
+        <div class="row justify-content-center">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <table class="table table-responsive table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Name </th>
+                            <th scope="col"> Overnight </th>
+                            <th scope="col"> 24hr </th>
+                            <th scope="col"> 48hr </th>
+                            <th scope="col"> 72hr </th>
+                            <th scope="col"> 7day </th>
+                            <th scope="col"> 30day </th>
+                            <th scope="col"> Total </th>
+                            <th scope="col"> Base Depth </th>
+                            <th scope="col"> Open Lifts </th>
+                            <th scope="col"> Total Lifts </th>
+                            <th scope="col"> Open Trails </th>
+                            <th scope="col"> Total Trails </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for resort in resort_list %}
+                        <tr>
+                            <th scope="row">{{resort.resort_name}}</th>
+                            <td>{{resort.snow_overnight}}</th>
+                            <td>{{resort.snow_24hrs}}</th>
+                            <td>{{resort.snow_48hrs}}</th>
+                            <td>{{resort.snow_72hrs}}</th>
+                            <td>{{resort.snow_7days}}</th>
+                            <td>{{resort.snow_30days}}</th>
+                            <td>{{resort.snow_total}}</th>
+                            <td>{{resort.snow_base_depth}}</th>
+                            <td>{{resort.lifts_open}}</th>
+                            <td>{{resort.lifts_total}}</th>
+                            <td>{{resort.trails_open}}</th>
+                            <td>{{resort.trails_total}}</th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-        </div>
+            <div class="col-1"></div>
         </div>
         {% else %}
         <p>No resorts are available.</p>
