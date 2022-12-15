@@ -15,5 +15,8 @@ class ActiveRecord(models.Model):
     trails_open = models.IntegerField(default=0)
     lifts_total = models.IntegerField(default=0)
     lifts_open = models.IntegerField(default=0)
+    country = models.CharField(max_length=50, default='')
+    region = models.CharField(max_length=50, default='')
+    passes = models.CharField(max_length=50, default='')
     def __str__(self):
         return self.resort_name
