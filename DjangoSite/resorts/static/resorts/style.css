@@ -19,6 +19,9 @@ body {
 .table td {
   white-space: nowrap;
 }
+.table tbody th {
+  white-space: nowrap;
+}
 .hiddenRow {
     padding: 0 !important;
 }
