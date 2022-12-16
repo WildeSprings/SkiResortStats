@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-import resort
+from . import resort
 
 RESORT_NAME = "Loveland Ski Area"
 COUNTRY = "USA"

@@ -1,7 +1,7 @@
 import psycopg2
 from decouple import config
 
-import copper, eldora, loveland
+from resorts import copper, eldora, loveland
 
 resorts = [
     copper.GetData(),
