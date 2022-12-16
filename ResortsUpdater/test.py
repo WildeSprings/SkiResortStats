@@ -1,4 +1,4 @@
-from resorts import abasin
+from resorts import eldora
 
 if __name__=='__main__':
-    print(abasin.GetData())
+    print(eldora.GetData())
