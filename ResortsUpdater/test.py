@@ -1,4 +1,4 @@
-from resorts import loveland
+from resorts import abasin
 
 if __name__=='__main__':
-    print(loveland.GetData())
+    print(abasin.GetData())
