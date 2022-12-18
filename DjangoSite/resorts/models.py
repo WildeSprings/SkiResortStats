@@ -18,5 +18,6 @@ class ActiveRecord(models.Model):
     country = models.CharField(max_length=50, default='')
     region = models.CharField(max_length=50, default='')
     passes = models.CharField(max_length=50, default='')
+    last_updated = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.resort_name
