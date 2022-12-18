@@ -10,6 +10,7 @@ psycopg2-binary = "*"
 requests = "*"
 bs4 = "*"
 whitenoise = "==5.1.0"
+gunicorn = "*"
 
 [dev-packages]
 
