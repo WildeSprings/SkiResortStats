@@ -35,7 +35,7 @@ def GetData():
     snow_soup = BeautifulSoup(snow_page.content, 'html.parser').findAll('div', class_="ab-condition_value")
     snow_overnight = None
     snow_24hrs = float(snow_soup[7].get_text().replace('"',''))
-    snow_48hrs = None
+    snow_48hrs = snow_24hrs # No value
     snow_72hrs = float(snow_soup[8].get_text().replace('"',''))
     snow_7days = None
     snow_30days = None

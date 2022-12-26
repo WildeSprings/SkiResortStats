@@ -29,6 +29,7 @@
         <div class="row justify-content-center">
             <div class="col-1"></div>
             <div class="col-10">
+                Updated: {{ latest_resort.last_updated }} UTC
                 <div class="table-responsive">
                     <table class="table table-striped" id="resortTable">
                         <thead>
@@ -49,6 +50,7 @@
                                 <th scope="col"> Passes </th>
                                 <th scope="col"> Region </th>
                                 <th scope="col"> Country </th>
+                                <th scope="col"> Reservations </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,6 +72,7 @@
                                 <td>{{resort.passes}}</th>
                                 <td>{{resort.region}}</th>
                                 <td>{{resort.country}}</th>
+                                <td>{{resort.reservation|yesno:"Yes,No"}}</th>
                             </tr>
                             {% endfor %}
                         </tbody>
