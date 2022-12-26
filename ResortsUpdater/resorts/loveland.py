@@ -6,7 +6,7 @@ from . import resort
 RESORT_NAME = "Loveland Ski Area"
 COUNTRY = "USA"
 REGION = "Colorado"
-PASSES = "None"
+PASSES = "Powder Alliance"
 
 
 def GetData():

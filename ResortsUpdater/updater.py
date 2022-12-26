@@ -1,13 +1,14 @@
 import psycopg2
 from decouple import config
 
-from resorts import abasin, copper, eldora, loveland
+from resorts import abasin, copper, eldora, loveland, winterpark
 
 resorts = [
     abasin.GetData(),
     copper.GetData(),
     eldora.GetData(),
     loveland.GetData(),
+    winterpark.GetData(),
 ]
 
 if __name__ == "__main__":
