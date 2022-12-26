@@ -3,20 +3,13 @@ from bs4 import BeautifulSoup
 
 from . import resort
 
-RESORT_NAME = "Winter Park"
-COUNTRY = "USA"
-REGION = "Colorado"
-PASSES = "Ikon"
-
-
-def GetData():
+def GetData(RESORT_NAME, COUNTRY, REGION, PASSES, RESORT_NUM):
 
     headers = {
         'User-Agent':
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
     }
-    resort_num = 5
-    url = "https://mtnpowder.com/feed?resortId={num}".format(num=resort_num)
+    url = "https://mtnpowder.com/feed?resortId={num}".format(num=RESORT_NUM)
 
     json_resp = json.loads(requests.get(url).content)
 
