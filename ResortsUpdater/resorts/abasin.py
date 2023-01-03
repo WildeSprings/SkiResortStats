@@ -7,6 +7,7 @@ RESORT_NAME = "Arapahoe Basin"
 COUNTRY = "USA"
 REGION = "Colorado"
 PASSES = "Ikon"
+RESERVATION = False
 
 
 def GetData():
@@ -45,6 +46,4 @@ def GetData():
                                      snow_48hrs, snow_72hrs, None, None,
                                      snow_total, snow_base_depth, lifts_open, lifts_total,
                                      trails_open, trails_total, COUNTRY,
-                                     REGION, PASSES)
-
-
+                                     REGION, PASSES, RESERVATION)

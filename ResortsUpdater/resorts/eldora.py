@@ -6,6 +6,7 @@ RESORT_NAME = "Eldora Ski Resort"
 COUNTRY = "USA"
 REGION = "Colorado"
 PASSES = "Ikon"
+RESERVATION = False
 
 
 def GetData():
@@ -54,4 +55,4 @@ def GetData():
                                      snow_48hrs, snow_72hrs, snow_7days,
                                      snow_30days, snow_total, snow_base_depth,
                                      lifts_open, lifts_total, trails_open,
-                                     trails_total, COUNTRY, REGION, PASSES)
+                                     trails_total, COUNTRY, REGION, PASSES, RESERVATION)

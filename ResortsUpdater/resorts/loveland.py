@@ -7,6 +7,7 @@ RESORT_NAME = "Loveland Ski Area"
 COUNTRY = "USA"
 REGION = "Colorado"
 PASSES = "Powder Alliance"
+RESERVATION = False
 
 
 def GetData():
@@ -46,7 +47,7 @@ def GetData():
                                      snow_48hrs, snow_72hrs, None, None,
                                      snow_total, None, lifts_open, lifts_total,
                                      trails_open, trails_total, COUNTRY,
-                                     REGION, PASSES)
+                                     REGION, PASSES, RESERVATION)
 
 
 if __name__ == "__main__":
