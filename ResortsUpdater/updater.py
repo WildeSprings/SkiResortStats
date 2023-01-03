@@ -35,18 +35,24 @@ if __name__ == "__main__":
                         snow_total = %s,
                         snow_base_depth = %s,
                         lifts_open = %s,
+                        lifts_total = %s,
                         trails_open = %s,
-                        last_updated = %s,
+                        trails_total = %s,
+                        country = %s,
+                        region = %s,
+                        passes = %s,
                         reservation = %s
+                        last_updated = %s,
                     WHERE resort_name = %s"""
         cursor.execute(
             sql, (resort.snow_overnight, resort.snow_24hrs, resort.snow_48hrs,
                   resort.snow_72hrs, resort.snow_7days, resort.snow_30days,
                   resort.snow_total, resort.snow_base_depth, resort.lifts_open,
-                  resort.trails_open, dt, resort.reservation_required, resort.resort_name))
+                  resort.lifts_total, resort.trails_open, resort.trails_total,
+                  resort.country, resort.region, resort.passes, resort.reservation_required,
+                  dt, resort.resort_name))
         if (cursor.rowcount != 0):
             print("%s updated, stats below" % (resort.resort_name))
-            print(resort)
         else:
             # ADD THE RECORD
             print("%s not found..." % (resort.resort_name))
