@@ -41,7 +41,7 @@ if __name__ == "__main__":
                         country = %s,
                         region = %s,
                         passes = %s,
-                        reservation = %s
+                        reservation = %s,
                         last_updated = %s,
                     WHERE resort_name = %s"""
         cursor.execute(
