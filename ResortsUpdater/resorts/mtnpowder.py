@@ -14,20 +14,20 @@ def GetData(RESORT_NAME, COUNTRY, REGION, PASSES, RESORT_NUM, RESERVATION):
     json_resp = json.loads(requests.get(url).content)
 
     snow_report = json_resp["SnowReport"]
-    lifts_open = snow_report["TotalOpenLifts"]
-    lifts_total = snow_report["TotalLifts"]
-    trails_open = snow_report["TotalOpenTrails"]
-    trails_total = snow_report["TotalTrails"]
+    lifts_open = snow_report["TotalOpenLifts"] if snow_report["TotalOpenLifts"] != "--" else None
+    lifts_total = snow_report["TotalLifts"] if snow_report["TotalOpenLifts"] != "--" else None
+    trails_open = snow_report["TotalOpenTrails"] if snow_report["TotalOpenLifts"] != "--" else None
+    trails_total = snow_report["TotalTrails"] if snow_report["TotalOpenLifts"] != "--" else None
 
-    snow_stats = snow_report["BaseArea"]
-    snow_overnight = snow_stats["SinceLiftsClosedIn"]
-    snow_24hrs = snow_stats["Last24HoursIn"]
-    snow_48hrs = snow_stats["Last48HoursIn"]
-    snow_72hrs = snow_stats["Last72HoursIn"]
-    snow_7days = snow_stats["Last7DaysIn"]
+    snow_stats = snow_report["BaseArea"] if snow_report["TotalOpenLifts"] != "--" else None
+    snow_overnight = snow_stats["SinceLiftsClosedIn"] if snow_report["TotalOpenLifts"] != "--" else None
+    snow_24hrs = snow_stats["Last24HoursIn"] if snow_report["TotalOpenLifts"] != "--" else None
+    snow_48hrs = snow_stats["Last48HoursIn"] if snow_report["TotalOpenLifts"] != "--" else None
+    snow_72hrs = snow_stats["Last72HoursIn"] if snow_report["TotalOpenLifts"] != "--" else None
+    snow_7days = snow_stats["Last7DaysIn"] if snow_report["TotalOpenLifts"] != "--" else None
     snow_30days = None
-    snow_total = snow_report["SeasonTotalIn"]
-    snow_base_depth = snow_stats["BaseIn"]
+    snow_total = snow_report["SeasonTotalIn"] if snow_report["TotalOpenLifts"] != "--" else None
+    snow_base_depth = snow_stats["BaseIn"] if snow_report["TotalOpenLifts"] != "--" else None
     return resort.ResortActiveRecord(RESORT_NAME, snow_overnight, snow_24hrs,
                                      snow_48hrs, snow_72hrs, None, None,
                                      snow_total, snow_base_depth, lifts_open, lifts_total,
