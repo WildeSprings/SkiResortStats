@@ -11,7 +11,7 @@ resorts = [
     loveland.GetData(),
     mtnpowder.GetData("Winter Park", "USA", "Colorado", "Ikon", 5, False),
     mtnpowder.GetData("Stratton", "USA", "New York", "Ikon", 1, False),
-    mtnpowder.GetData("Snowshoe", "USA", "Colorado", "Ikon", 2, False),
+    mtnpowder.GetData("Snowshoe", "USA", "West Virginia", "Ikon", 2, False),
     mtnpowder.GetData("Blue", "Canada", "Ontario", "Ikon", 3, False),
     mtnpowder.GetData("Tremblant", "Canada", "Quebec", "Ikon", 4, False),
 ]
