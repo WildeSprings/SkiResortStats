@@ -53,6 +53,7 @@ if __name__ == "__main__":
                   dt, resort.resort_name))
         if (cursor.rowcount != 0):
             print("%s updated, stats below" % (resort.resort_name))
+            print(resort)
         else:
             # ADD THE RECORD
             print("%s not found..." % (resort.resort_name))
