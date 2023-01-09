@@ -33,11 +33,3 @@ def GetData(RESORT_NAME, COUNTRY, REGION, PASSES, RESORT_NUM, RESERVATION):
                                      snow_total, snow_base_depth, lifts_open, lifts_total,
                                      trails_open, trails_total, COUNTRY,
                                      REGION, PASSES, RESERVATION)
-
-
-
-#print(GetData("Winter Park", "USA", "Colorado", "Ikon", 5))
-#print(GetData("Stratton", "USA", "New York", "Ikon", 1))
-# GetData("Snowshoe", "USA", "Colorado", "Ikon", 2),
-# GetData("Blue", "Canada", "Ontario", "Ikon", 3),
-# GetData("Tremblant", "Canada", "Quebec", "Ikon", 4),

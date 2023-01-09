@@ -1,3 +1,4 @@
+
 import psycopg2
 from decouple import config
 from datetime import datetime, timezone
@@ -62,6 +63,103 @@ def GetResortsData():
         resorts.append(vailresorts.GetData("Beaver Creek", "www.beavercreek.com", "USA", "Colorado", "Epic", False))
     except Exeception as e:
         print(e)
+    try:
+        resorts.append(vailresorts.GetData("Heavenly Lake Tahoe", "www.skiheavenly.com", "USA", "California", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Park City", "www.parkcitymountain.com", "USA", "Utah", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Crested Butte", "www.skicb.com", "USA", "Colorado", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("North Star", "www.northstarcalifornia.com", "USA", "California", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Kirkwood", "www.kirkwood.com", "USA", "California", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Stevens Pass", "www.stevenspass.com", "USA", "Washington", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Stowe", "www.stowe.com", "USA", "Vermont", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Okemo", "www.okemo.com", "USA", "Vermont", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Mount Snow", "www.mountsnow.com", "USA", "Vermont", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Hunter", "www.huntermtn.com", "USA", "New York", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Attitash", "www.attitash.com", "USA", "New Hampshire", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Wildcat", "www.skiwildcat.com", "USA", "New Hampshire", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Mount Sunapee", "www.mountsunapee.com", "USA", "New Hampshire", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Crotched", "www.crotchedmtn.com", "USA", "New Hampshire", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Wilmot", "www.wilmotmountain.com", "USA", "Wisconsin", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Afton Alps", "www.aftonalps.com", "USA", "Minnesota", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Mt Brighton", "www.mtbrighton.com", "USA", "Michigan", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Alpine Valley", "www.alpinevalleyohio.com", "USA", "Ohio", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Boston Mills/Brandywine", "www.bmbw.com", "USA", "Ohio", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Mad River", "www.skimadriver.com", "USA", "Ohio", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Hidden Valley", "www.hiddenvalleyski.com", "USA", "Missouri", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Snow Creek", "www.skisnowcreek.com", "USA", "Missouri", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Paoli Peaks", "www.paolipeaks.com", "USA", "Indiana", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Whistler Blackcomb", "www.whistlerblackcomb.com", "Canada", "British Columbia", "Epic", False))
+    except Exeception as e:
+        print(e)
+
     return resorts
 
 resorts_old = [
@@ -78,6 +176,30 @@ resorts_old = [
     vailresorts.GetData("Breckenridge", "www.breckenridge.com", "USA", "Colorado", "Epic", False),
     vailresorts.GetData("Keystone", "www.keystoneresort.com", "USA", "Colorado", "Epic", False),
     vailresorts.GetData("Beaver Creek", "www.beavercreek.com", "USA", "Colorado", "Epic", False),
+    vailresorts.GetData("Heavenly Lake Tahoe", "www.skiheavenly.com", "USA", "California", "Epic", False),
+    vailresorts.GetData("Park City", "www.parkcitymountain.com", "USA", "Utah", "Epic", False),
+    vailresorts.GetData("Crested Butte", "www.skicb.com", "USA", "Colorado", "Epic", False),
+    vailresorts.GetData("North Star", "www.northstarcalifornia.com", "USA", "California", "Epic", False),
+    vailresorts.GetData("Kirkwood", "www.kirkwood.com", "USA", "California", "Epic", False),
+    vailresorts.GetData("Stevens Pass", "www.stevenspass.com", "USA", "Washington", "Epic", False),
+    vailresorts.GetData("Stowe", "www.stowe.com", "USA", "Vermont", "Epic", False),
+    vailresorts.GetData("Okemo", "www.okemo.com", "USA", "Vermont", "Epic", False),
+    vailresorts.GetData("Mount Snow", "www.mountsnow.com", "USA", "Vermont", "Epic", False),
+    vailresorts.GetData("Hunter", "www.huntermtn.com", "USA", "New York", "Epic", False),
+    vailresorts.GetData("Attitash", "www.attitash.com", "USA", "New Hampshire", "Epic", False),
+    vailresorts.GetData("Wildcat", "www.skiwildcat.com", "USA", "New Hampshire", "Epic", False),
+    vailresorts.GetData("Mount Sunapee", "www.mountsunapee.com", "USA", "New Hampshire", "Epic", False),
+    vailresorts.GetData("Crotched", "www.crotchedmtn.com", "USA", "New Hampshire", "Epic", False),
+    vailresorts.GetData("Wilmot", "www.wilmotmountain.com", "USA", "Wisconsin", "Epic", False),
+    vailresorts.GetData("Afton Alps", "www.aftonalps.com", "USA", "Minnesota", "Epic", False),
+    vailresorts.GetData("Mt Brighton", "www.mtbrighton.com", "USA", "Michigan", "Epic", False),
+    vailresorts.GetData("Alpine Valley", "www.alpinevalleyohio.com", "USA", "Ohio", "Epic", False),
+    vailresorts.GetData("Boston Mills/Brandywine", "www.bmbw.com", "USA", "Ohio", "Epic", False),
+    vailresorts.GetData("Mad River", "www.skimadriver.com", "USA", "Ohio", "Epic", False),
+    vailresorts.GetData("Hidden Valley", "www.hiddenvalleyski.com", "USA", "Missouri", "Epic", False),
+    vailresorts.GetData("Snow Creek", "www.skisnowcreek.com", "USA", "Missouri", "Epic", False),
+    vailresorts.GetData("Paoli Peaks", "www.paolipeaks.com", "USA", "Indiana", "Epic", False),
+    vailresorts.GetData("Whistler Blackcomb", "www.whistlerblackcomb.com", "Canada", "British Columbia", "Epic", False),
 ]
 
 if __name__ == "__main__":
