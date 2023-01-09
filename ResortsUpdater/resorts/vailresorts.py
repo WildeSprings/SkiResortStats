@@ -1,7 +1,7 @@
 import requests, json
 from bs4 import BeautifulSoup
 
-# from . import resort
+from . import resort
 
 def GetData(RESORT_NAME, WEBSITE, COUNTRY, REGION, PASSES, RESERVATION):
 
