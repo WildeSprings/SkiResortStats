@@ -2,7 +2,7 @@ import psycopg2
 from decouple import config
 from datetime import datetime, timezone
 
-from resorts import abasin, copper, eldora, loveland, mtnpowder
+from resorts import abasin, copper, eldora, loveland, mtnpowder, vailresorts
 
 resorts = [
     abasin.GetData(),
@@ -14,6 +14,10 @@ resorts = [
     mtnpowder.GetData("Snowshoe", "USA", "West Virginia", "Ikon", 2, False),
     mtnpowder.GetData("Blue", "Canada", "Ontario", "Ikon", 3, False),
     mtnpowder.GetData("Tremblant", "Canada", "Quebec", "Ikon", 4, False),
+    vailresorts.GetData("Vail", "www.vail.com", "USA", "Colorado", "Epic", False),
+    vailresorts.GetData("Breckenridge", "www.breckenridge.com", "USA", "Colorado", "Epic", False),
+    vailresorts.GetData("Keystone", "www.keystoneresort.com", "USA", "Colorado", "Epic", False),
+    vailresorts.GetData("Beaver Creek", "www.beavercreek.com", "USA", "Colorado", "Epic", False),
 ]
 
 if __name__ == "__main__":
