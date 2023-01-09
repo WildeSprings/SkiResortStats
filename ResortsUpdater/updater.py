@@ -4,7 +4,67 @@ from datetime import datetime, timezone
 
 from resorts import abasin, copper, eldora, loveland, mtnpowder, vailresorts
 
-resorts = [
+def GetResortsData():
+    resorts = []
+    try:
+        resorts.append(abasin.GetData())
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(copper.GetData())
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(eldora.GetData())
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(loveland.GetData())
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(mtnpowder.GetData("Winter Park", "USA", "Colorado", "Ikon", 5, False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(mtnpowder.GetData("Stratton", "USA", "New York", "Ikon", 1, False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(mtnpowder.GetData("Snowshoe", "USA", "West Virginia", "Ikon", 2, False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(mtnpowder.GetData("Blue", "Canada", "Ontario", "Ikon", 3, False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(mtnpowder.GetData("Blue", "Canada", "Ontario", "Ikon", 3, False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(mtnpowder.GetData("Tremblant", "Canada", "Quebec", "Ikon", 4, False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Vail", "www.vail.com", "USA", "Colorado", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Breckenridge", "www.breckenridge.com", "USA", "Colorado", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Keystone", "www.keystoneresort.com", "USA", "Colorado", "Epic", False))
+    except Exeception as e:
+        print(e)
+    try:
+        resorts.append(vailresorts.GetData("Beaver Creek", "www.beavercreek.com", "USA", "Colorado", "Epic", False))
+    except Exeception as e:
+        print(e)
+    return resorts
+
+resorts_old = [
     abasin.GetData(),
     copper.GetData(),
     eldora.GetData(),
@@ -28,6 +88,7 @@ if __name__ == "__main__":
                             port="5432")
     cursor = conn.cursor()
     dt = datetime.now(timezone.utc)
+    resorts = GetResortsData()
     for resort in resorts:
         try:
             sql = """ UPDATE resorts_activerecord
