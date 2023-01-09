@@ -29,52 +29,55 @@ if __name__ == "__main__":
     cursor = conn.cursor()
     dt = datetime.now(timezone.utc)
     for resort in resorts:
-        sql = """ UPDATE resorts_activerecord
-                    SET snow_overnight = %s,
-                        snow_24hrs = %s,
-                        snow_48hrs = %s,
-                        snow_72hrs = %s,
-                        snow_7days = %s,
-                        snow_30days = %s,
-                        snow_total = %s,
-                        snow_base_depth = %s,
-                        lifts_open = %s,
-                        lifts_total = %s,
-                        trails_open = %s,
-                        trails_total = %s,
-                        country = %s,
-                        region = %s,
-                        passes = %s,
-                        reservation = %s,
-                        last_updated = %s
-                    WHERE resort_name = %s"""
-        cursor.execute(
-            sql, (resort.snow_overnight, resort.snow_24hrs, resort.snow_48hrs,
-                  resort.snow_72hrs, resort.snow_7days, resort.snow_30days,
-                  resort.snow_total, resort.snow_base_depth, resort.lifts_open,
-                  resort.lifts_total, resort.trails_open, resort.trails_total,
-                  resort.country, resort.region, resort.passes, resort.reservation_required,
-                  dt, resort.resort_name))
-        if (cursor.rowcount != 0):
-            print("%s updated, stats below" % (resort.resort_name))
-            print(resort)
-        else:
-            # ADD THE RECORD
-            print("%s not found..." % (resort.resort_name))
-            add_sql = """ INSERT INTO resorts_activerecord (resort_name, snow_overnight, snow_24hrs, snow_48hrs, snow_72hrs, snow_7days, snow_30days, snow_total, snow_base_depth, lifts_open, lifts_total, trails_open, trails_total, country, region, passes, last_updated, reservation) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-            record_to_insert = (resort.resort_name, resort.snow_overnight,
-                                resort.snow_24hrs, resort.snow_48hrs,
-                                resort.snow_72hrs, resort.snow_7days,
-                                resort.snow_30days, resort.snow_total,
-                                resort.snow_base_depth, resort.lifts_open,
-                                resort.lifts_total, resort.trails_open,
-                                resort.trails_total, resort.country,
-                                resort.region, resort.passes, dt,
-                                resort.reservation_required)
-            cursor.execute(add_sql, record_to_insert)
+        try:
+            sql = """ UPDATE resorts_activerecord
+                        SET snow_overnight = %s,
+                            snow_24hrs = %s,
+                            snow_48hrs = %s,
+                            snow_72hrs = %s,
+                            snow_7days = %s,
+                            snow_30days = %s,
+                            snow_total = %s,
+                            snow_base_depth = %s,
+                            lifts_open = %s,
+                            lifts_total = %s,
+                            trails_open = %s,
+                            trails_total = %s,
+                            country = %s,
+                            region = %s,
+                            passes = %s,
+                            reservation = %s,
+                            last_updated = %s
+                        WHERE resort_name = %s"""
+            cursor.execute(
+                sql, (resort.snow_overnight, resort.snow_24hrs, resort.snow_48hrs,
+                      resort.snow_72hrs, resort.snow_7days, resort.snow_30days,
+                      resort.snow_total, resort.snow_base_depth, resort.lifts_open,
+                      resort.lifts_total, resort.trails_open, resort.trails_total,
+                      resort.country, resort.region, resort.passes, resort.reservation_required,
+                      dt, resort.resort_name))
             if (cursor.rowcount != 0):
-                print("%s added to table, stats below" % (resort.resort_name))
+                print("%s updated, stats below" % (resort.resort_name))
                 print(resort)
+            else:
+                # ADD THE RECORD
+                print("%s not found..." % (resort.resort_name))
+                add_sql = """ INSERT INTO resorts_activerecord (resort_name, snow_overnight, snow_24hrs, snow_48hrs, snow_72hrs, snow_7days, snow_30days, snow_total, snow_base_depth, lifts_open, lifts_total, trails_open, trails_total, country, region, passes, last_updated, reservation) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+                record_to_insert = (resort.resort_name, resort.snow_overnight,
+                                    resort.snow_24hrs, resort.snow_48hrs,
+                                    resort.snow_72hrs, resort.snow_7days,
+                                    resort.snow_30days, resort.snow_total,
+                                    resort.snow_base_depth, resort.lifts_open,
+                                    resort.lifts_total, resort.trails_open,
+                                    resort.trails_total, resort.country,
+                                    resort.region, resort.passes, dt,
+                                    resort.reservation_required)
+                cursor.execute(add_sql, record_to_insert)
+                if (cursor.rowcount != 0):
+                    print("%s added to table, stats below" % (resort.resort_name))
+                    print(resort)
+        except:
+            print("%s had an error" % (resort.resort_name))
 
     conn.commit()
     cursor.close()
