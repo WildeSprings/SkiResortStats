@@ -40,6 +40,7 @@ def GetData():
         snow_24hrs = float(snow_soup[7].get_text().replace('"',''))
     except Exception as e:
         print("Error getting Abasin 24hrs snow: %s" % (e))
+        snow_24hrs = "0"
     snow_48hrs = snow_24hrs # No value
     snow_72hrs = float(snow_soup[8].get_text().replace('"',''))
     snow_7days = None
