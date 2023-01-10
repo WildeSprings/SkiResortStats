@@ -37,6 +37,7 @@ def GetData():
     snow_total = float(
         table8am.findAll('tr')[1].findAll('td')[4].find(
             'h1').get_text().replace('"', ''))
+    snow_base_depth = float(tableOtherInfo.findAll('td')[1].find('h1').get_text().replace('"',''))
     lifts_open = int(tableOtherInfo.findAll('td')[2].find('h1').get_text())
     lifts_total = int(
         tableOtherInfo.findAll('td')[2].find('h5').get_text().split()[1])
@@ -45,7 +46,7 @@ def GetData():
         tableOtherInfo.findAll('td')[3].find('h5').get_text().split()[1])
     return resort.ResortActiveRecord(RESORT_NAME, snow_overnight, snow_24hrs,
                                      snow_48hrs, snow_72hrs, None, None,
-                                     snow_total, None, lifts_open, lifts_total,
+                                     snow_total, snow_base_depth, lifts_open, lifts_total,
                                      trails_open, trails_total, COUNTRY,
                                      REGION, PASSES, RESERVATION)
 
