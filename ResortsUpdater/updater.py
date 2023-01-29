@@ -23,142 +23,56 @@ def GetResortsData():
         resorts.append(loveland.GetData())
     except Exception as e:
         print("Loveland: {}".format(e))
-    try:
-        resorts.append(mtnpowder.GetData("Winter Park", "USA", "Colorado", "Ikon", 5, False))
-    except Exception as e:
-        print("Winter Park: {}".format(e))
-    try:
-        resorts.append(mtnpowder.GetData("Steamboat", "USA", "Colorado", "Ikon", 6, False, True))
-    except Exception as e:
-        print("Winter Park: {}".format(e))
-    try:
-        resorts.append(mtnpowder.GetData("Stratton", "USA", "New York", "Ikon", 1, False))
-    except Exception as e:
-        print("Stratton: {}".format(e))
-    try:
-        resorts.append(mtnpowder.GetData("Snowshoe", "USA", "West Virginia", "Ikon", 2, False))
-    except Exception as e:
-        print("Snowshoe: {}".format(e))
-    try:
-        resorts.append(mtnpowder.GetData("Blue", "Canada", "Ontario", "Ikon", 3, False))
-    except Exception as e:
-        print("Blue: {}".format(e))
-    try:
-        resorts.append(mtnpowder.GetData("Tremblant", "Canada", "Quebec", "Ikon", 4, False))
-    except Exception as e:
-        print("Tremblant: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Vail", "www.vail.com", "USA", "Colorado", "Epic", False))
-    except Exception as e:
-        print("Vail: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Breckenridge", "www.breckenridge.com", "USA", "Colorado", "Epic", False))
-    except Exception as e:
-        print("Breckenridge: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Keystone", "www.keystoneresort.com", "USA", "Colorado", "Epic", False))
-    except Exception as e:
-        print("Keystone: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Beaver Creek", "www.beavercreek.com", "USA", "Colorado", "Epic", False))
-    except Exception as e:
-        print("Beaver Creek: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Heavenly Lake Tahoe", "www.skiheavenly.com", "USA", "California", "Epic", False))
-    except Exception as e:
-        print("Heavenly: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Park City", "www.parkcitymountain.com", "USA", "Utah", "Epic", False))
-    except Exception as e:
-        print("Park City: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Crested Butte", "www.skicb.com", "USA", "Colorado", "Epic", False))
-    except Exception as e:
-        print("Crested Butte: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("North Star", "www.northstarcalifornia.com", "USA", "California", "Epic", False))
-    except Exception as e:
-        print("North Star: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Kirkwood", "www.kirkwood.com", "USA", "California", "Epic", False))
-    except Exception as e:
-        print("Kirkwood: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Stevens Pass", "www.stevenspass.com", "USA", "Washington", "Epic", False))
-    except Exception as e:
-        print("Stevens Pass: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Stowe", "www.stowe.com", "USA", "Vermont", "Epic", False))
-    except Exception as e:
-        print("Stowe: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Okemo", "www.okemo.com", "USA", "Vermont", "Epic", False))
-    except Exception as e:
-        print("Okemo: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Mount Snow", "www.mountsnow.com", "USA", "Vermont", "Epic", False))
-    except Exception as e:
-        print("Mount Snow: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Hunter", "www.huntermtn.com", "USA", "New York", "Epic", False))
-    except Exception as e:
-        print("Hunter: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Attitash", "www.attitash.com", "USA", "New Hampshire", "Epic", False))
-    except Exception as e:
-        print("Attitash: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Wildcat", "www.skiwildcat.com", "USA", "New Hampshire", "Epic", False))
-    except Exception as e:
-        print("Wildcat: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Mount Sunapee", "www.mountsunapee.com", "USA", "New Hampshire", "Epic", False))
-    except Exception as e:
-        print("Mount Sunapee: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Crotched", "www.crotchedmtn.com", "USA", "New Hampshire", "Epic", False))
-    except Exception as e:
-        print("Crotched: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Wilmot", "www.wilmotmountain.com", "USA", "Wisconsin", "Epic", False))
-    except Exception as e:
-        print("Wilmot: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Afton Alps", "www.aftonalps.com", "USA", "Minnesota", "Epic", False))
-    except Exception as e:
-        print("Afton Alps: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Mt Brighton", "www.mtbrighton.com", "USA", "Michigan", "Epic", False))
-    except Exception as e:
-        print("Mt Brighton: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Alpine Valley", "www.alpinevalleyohio.com", "USA", "Ohio", "Epic", False))
-    except Exception as e:
-        print("Alpine Valley: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Boston Mills/Brandywine", "www.bmbw.com", "USA", "Ohio", "Epic", False))
-    except Exception as e:
-        print("Boston Mills/Brandywine: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Mad River", "www.skimadriver.com", "USA", "Ohio", "Epic", False))
-    except Exception as e:
-        print("Mad River: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Hidden Valley", "www.hiddenvalleyski.com", "USA", "Missouri", "Epic", False))
-    except Exception as e:
-        print("Hidden Valley: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Snow Creek", "www.skisnowcreek.com", "USA", "Missouri", "Epic", False))
-    except Exception as e:
-        print("Snow Creek: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Paoli Peaks", "www.paolipeaks.com", "USA", "Indiana", "Epic", False))
-    except Exception as e:
-        print("Paoli Peaks: {}".format(e))
-    try:
-        resorts.append(vailresorts.GetData("Whistler Blackcomb", "www.whistlerblackcomb.com", "Canada", "British Columbia", "Epic", False))
-    except Exception as e:
-        print("Whistler Blackcomb: {}".format(e))
+
+    mtnpowder_resorts = [
+        ("Winter Park", "USA", "Colorado", "Ikon", 5, False, False),
+        ("Steamboat", "USA", "Colorado", "Ikon", 6, False, True),
+        ("Stratton", "USA", "New York", "Ikon", 1, False, False),
+        ("Snowshoe", "USA", "West Virginia", "Ikon", 2, False, False),
+        ("Blue", "Canada", "Ontario", "Ikon", 3, False, False),
+        ("Tremblant", "Canada", "Quebec", "Ikon", 4, False, False)
+    ]
+    for resort in mtnpowder_resorts:
+        try:
+            resorts.append(mtnpowder.GetData(*resort))
+        except Exception as e:
+            print("{}: {}".format(resort[0], e))
+    
+    vail_resorts = [
+        ("Vail", "www.vail.com", "USA", "Colorado", "Epic", False),
+        ("Breckenridge", "www.breckenridge.com", "USA", "Colorado", "Epic", False),
+        ("Keystone", "www.keystoneresort.com", "USA", "Colorado", "Epic", False),
+        ("Beaver Creek", "www.beavercreek.com", "USA", "Colorado", "Epic", False),
+        ("Heavenly Lake Tahoe", "www.skiheavenly.com", "USA", "California", "Epic", False),
+        ("Park City", "www.parkcitymountain.com", "USA", "Utah", "Epic", False),
+        ("Crested Butte", "www.skicb.com", "USA", "Colorado", "Epic", False),
+        ("North Star", "www.northstarcalifornia.com", "USA", "California", "Epic", False),
+        ("Kirkwood", "www.kirkwood.com", "USA", "California", "Epic", False),
+        ("Stevens Pass", "www.stevenspass.com", "USA", "Washington", "Epic", False),
+        ("Stowe", "www.stowe.com", "USA", "Vermont", "Epic", False),
+        ("Okemo", "www.okemo.com", "USA", "Vermont", "Epic", False),
+        ("Mount Snow", "www.mountsnow.com", "USA", "Vermont", "Epic", False),
+        ("Hunter", "www.huntermtn.com", "USA", "New York", "Epic", False),
+        ("Attitash", "www.attitash.com", "USA", "New Hampshire", "Epic", False),
+        ("Wildcat", "www.skiwildcat.com", "USA", "New Hampshire", "Epic", False),
+        ("Mount Sunapee", "www.mountsunapee.com", "USA", "New Hampshire", "Epic", False),
+        ("Crotched", "www.crotchedmtn.com", "USA", "New Hampshire", "Epic", False),
+        ("Wilmot", "www.wilmotmountain.com", "USA", "Wisconsin", "Epic", False),
+        ("Afton Alps", "www.aftonalps.com", "USA", "Minnesota", "Epic", False),
+        ("Mt Brighton", "www.mtbrighton.com", "USA", "Michigan", "Epic", False),
+        ("Alpine Valley", "www.alpinevalleyohio.com", "USA", "Ohio", "Epic", False),
+        ("Boston Mills/Brandywine", "www.bmbw.com", "USA", "Ohio", "Epic", False),
+        ("Mad River", "www.skimadriver.com", "USA", "Ohio", "Epic", False),
+        ("Hidden Valley", "www.hiddenvalleyski.com", "USA", "Missouri", "Epic", False),
+        ("Snow Creek", "www.skisnowcreek.com", "USA", "Missouri", "Epic", False),
+        ("Paoli Peaks", "www.paolipeaks.com", "USA", "Indiana", "Epic", False),
+        ("Whistler Blackcomb", "www.whistlerblackcomb.com", "Canada", "British Columbia", "Epic", False)
+    ]
+    for resort in vail_resorts:
+        try:
+            resorts.append(vailresorts.GetData(*resort))
+        except Exception as e:
+            print("{}: {}".format(resort[0], e))
 
     return resorts
 
