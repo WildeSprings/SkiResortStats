@@ -28,6 +28,10 @@ def GetResortsData():
     except Exception as e:
         print("Winter Park: {}".format(e))
     try:
+        resorts.append(mtnpowder.GetData("Steamboat", "USA", "Colorado", "Ikon", 6, False, True))
+    except Exception as e:
+        print("Winter Park: {}".format(e))
+    try:
         resorts.append(mtnpowder.GetData("Stratton", "USA", "New York", "Ikon", 1, False))
     except Exception as e:
         print("Stratton: {}".format(e))

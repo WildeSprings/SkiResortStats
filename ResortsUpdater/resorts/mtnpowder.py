@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 from . import resort
 
-def GetData(RESORT_NAME, COUNTRY, REGION, PASSES, RESORT_NUM, RESERVATION):
+def GetData(RESORT_NAME, COUNTRY, REGION, PASSES, RESORT_NUM, RESERVATION, FLAG=False):
 
     headers = {
         'User-Agent':
@@ -19,7 +19,12 @@ def GetData(RESORT_NAME, COUNTRY, REGION, PASSES, RESORT_NUM, RESERVATION):
     trails_open = snow_report["TotalOpenTrails"] if snow_report["TotalOpenTrails"] != "--" else None
     trails_total = snow_report["TotalTrails"] if snow_report["TotalTrails"] != "--" else None
 
-    snow_stats = snow_report["BaseArea"] if snow_report["BaseArea"] != "--" else None
+    
+    section_name = "BaseArea"
+    if flag: 
+        section_name = "MidMountainArea"
+
+    snow_stats = snow_report[section_name]
     snow_overnight = snow_stats["SinceLiftsClosedIn"] if snow_stats["SinceLiftsClosedIn"] != "--" else None
     snow_24hrs = snow_stats["Last24HoursIn"] if snow_stats["Last24HoursIn"] != "--" else None
     snow_48hrs = snow_stats["Last48HoursIn"] if snow_stats["Last48HoursIn"] != "--" else None
