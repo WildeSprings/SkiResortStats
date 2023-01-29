@@ -21,7 +21,7 @@ def GetData(RESORT_NAME, COUNTRY, REGION, PASSES, RESORT_NUM, RESERVATION, FLAG=
 
     
     section_name = "BaseArea"
-    if flag: 
+    if FLAG: 
         section_name = "MidMountainArea"
 
     snow_stats = snow_report[section_name]
