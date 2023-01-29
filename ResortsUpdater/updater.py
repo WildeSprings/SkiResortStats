@@ -7,21 +7,26 @@ from resorts import abasin, copper, eldora, loveland, mtnpowder, vailresorts
 
 def GetResortsData():
     resorts = []
+    bad_resorts = []
     try:
         resorts.append(abasin.GetData())
     except Exception as e:
+        bad_resorts.append("Arapahoe Basin")
         print("Arapahoe Basin: {}".format(e))
     try:
         resorts.append(copper.GetData())
     except Exception as e:
+        bad_resorts.append("Copper Ski Resort")
         print("Copper: {}".format(e))
     try:
         resorts.append(eldora.GetData())
     except Exception as e:
+        bad_resorts.append("Eldora Ski Resort")
         print("Eldora: {}".format(e))
     try:
         resorts.append(loveland.GetData())
     except Exception as e:
+        bad_resorts.append("Loveland Ski Area")
         print("Loveland: {}".format(e))
 
     mtnpowder_resorts = [
@@ -36,6 +41,7 @@ def GetResortsData():
         try:
             resorts.append(mtnpowder.GetData(*resort))
         except Exception as e:
+            bad_resorts.append(resort[0])
             print("{}: {}".format(resort[0], e))
     
     vail_resorts = [
@@ -72,9 +78,10 @@ def GetResortsData():
         try:
             resorts.append(vailresorts.GetData(*resort))
         except Exception as e:
+            bad_resorts.append(resort[0])
             print("{}: {}".format(resort[0], e))
 
-    return resorts
+    return resorts, bad_resorts
 
 # resorts_old = [
 #     abasin.GetData(),
@@ -124,7 +131,7 @@ if __name__ == "__main__":
                             port="5432")
     cursor = conn.cursor()
     dt = datetime.now(timezone.utc)
-    resorts = GetResortsData()
+    resorts, bad_resorts = GetResortsData()
     for resort in resorts:
         try:
             sql = """ UPDATE resorts_activerecord
@@ -174,7 +181,32 @@ if __name__ == "__main__":
                     print("%s added to table, stats below" % (resort.resort_name))
                     print(resort)
         except:
-            print("%s had an error" % (resort.resort_name))
+            print("%s had an error updating the database" % (resort.resort_name))
+    for resort in bad_resorts:
+        try:
+            sql = """ UPDATE resorts_activerecord
+                        SET snow_overnight = -1,
+                            snow_24hrs = -1,
+                            snow_48hrs = -1,
+                            snow_72hrs = -1,
+                            snow_7days = -1,
+                            snow_30days = -1,
+                            snow_total = -1,
+                            snow_base_depth = -1,
+                            lifts_open = -1,
+                            lifts_total = -1,
+                            trails_open = -1,
+                            trails_total = -1,
+                            country = N/A,
+                            region = N/A,
+                            passes = N/A,
+                            reservation = N/A,
+                            last_updated = %s
+                        WHERE resort_name = %s"""
+            cursor.execute(
+                sql, (dt, resort))
+        except:
+            print("%s had an error updating the database" % (resort))
 
     conn.commit()
     cursor.close()
