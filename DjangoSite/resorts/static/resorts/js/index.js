@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#resortTable').DataTable( {
+    var table = $('#resortTable').DataTable( {
         scrollX: true,
         scrollCollapse: true,
         paging: true,
