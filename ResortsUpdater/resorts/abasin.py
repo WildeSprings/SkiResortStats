@@ -34,8 +34,8 @@ def GetData():
     trails_total = int(trails[1])
 
     snow_soup = BeautifulSoup(snow_page.content, 'html.parser').findAll('div', class_="ab-condition_value")
-    snow_overnight = None
-    snow_24hrs = None
+    snow_overnight = -1
+    snow_24hrs = -1
     try:
         snow_24hrs = float(snow_soup[7].get_text().replace('"',''))
     except Exception as e:
@@ -43,12 +43,12 @@ def GetData():
         snow_24hrs = "0"
     snow_48hrs = snow_24hrs # No value
     snow_72hrs = float(snow_soup[8].get_text().replace('"',''))
-    snow_7days = None
-    snow_30days = None
+    snow_7days = -1
+    snow_30days = -1
     snow_total = float(snow_soup[10].get_text().replace('"',''))
     snow_base_depth = float(snow_soup[9].get_text().replace('"',''))
     return resort.ResortActiveRecord(RESORT_NAME, snow_overnight, snow_24hrs,
-                                     snow_48hrs, snow_72hrs, None, None,
+                                     snow_48hrs, snow_72hrs, -1, -1,
                                      snow_total, snow_base_depth, lifts_open, lifts_total,
                                      trails_open, trails_total, COUNTRY,
                                      REGION, PASSES, RESERVATION)

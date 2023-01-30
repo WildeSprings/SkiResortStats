@@ -45,7 +45,7 @@ def GetData():
     trails_total = int(
         tableOtherInfo.findAll('td')[3].find('h5').get_text().split()[1])
     return resort.ResortActiveRecord(RESORT_NAME, snow_overnight, snow_24hrs,
-                                     snow_48hrs, snow_72hrs, None, None,
+                                     snow_48hrs, snow_72hrs, -1, -1,
                                      snow_total, snow_base_depth, lifts_open, lifts_total,
                                      trails_open, trails_total, COUNTRY,
                                      REGION, PASSES, RESERVATION)

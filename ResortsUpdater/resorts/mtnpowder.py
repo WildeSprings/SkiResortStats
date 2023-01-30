@@ -14,10 +14,10 @@ def GetData(RESORT_NAME, COUNTRY, REGION, PASSES, RESORT_NUM, RESERVATION, FLAG=
     json_resp = json.loads(requests.get(url).content)
 
     snow_report = json_resp["SnowReport"]
-    lifts_open = snow_report["TotalOpenLifts"] if snow_report["TotalOpenLifts"] != "--" else None
-    lifts_total = snow_report["TotalLifts"] if snow_report["TotalLifts"] != "--" else None
-    trails_open = snow_report["TotalOpenTrails"] if snow_report["TotalOpenTrails"] != "--" else None
-    trails_total = snow_report["TotalTrails"] if snow_report["TotalTrails"] != "--" else None
+    lifts_open = snow_report["TotalOpenLifts"] if snow_report["TotalOpenLifts"] != "--" else -1
+    lifts_total = snow_report["TotalLifts"] if snow_report["TotalLifts"] != "--" else -1
+    trails_open = snow_report["TotalOpenTrails"] if snow_report["TotalOpenTrails"] != "--" else -1
+    trails_total = snow_report["TotalTrails"] if snow_report["TotalTrails"] != "--" else -1
 
     
     section_name = "BaseArea"
@@ -25,16 +25,16 @@ def GetData(RESORT_NAME, COUNTRY, REGION, PASSES, RESORT_NUM, RESERVATION, FLAG=
         section_name = "MidMountainArea"
 
     snow_stats = snow_report[section_name]
-    snow_overnight = snow_stats["SinceLiftsClosedIn"] if snow_stats["SinceLiftsClosedIn"] != "--" else None
-    snow_24hrs = snow_stats["Last24HoursIn"] if snow_stats["Last24HoursIn"] != "--" else None
-    snow_48hrs = snow_stats["Last48HoursIn"] if snow_stats["Last48HoursIn"] != "--" else None
-    snow_72hrs = snow_stats["Last72HoursIn"] if snow_stats["Last72HoursIn"] != "--" else None
-    snow_7days = snow_stats["Last7DaysIn"] if snow_stats["Last7DaysIn"] != "--" else None
-    snow_30days = None
-    snow_total = snow_report["SeasonTotalIn"] if snow_report["SeasonTotalIn"] != "--" else None
-    snow_base_depth = snow_stats["BaseIn"] if snow_stats["BaseIn"] != "--" else None
+    snow_overnight = snow_stats["SinceLiftsClosedIn"] if snow_stats["SinceLiftsClosedIn"] != "--" else -1
+    snow_24hrs = snow_stats["Last24HoursIn"] if snow_stats["Last24HoursIn"] != "--" else -1
+    snow_48hrs = snow_stats["Last48HoursIn"] if snow_stats["Last48HoursIn"] != "--" else -1
+    snow_72hrs = snow_stats["Last72HoursIn"] if snow_stats["Last72HoursIn"] != "--" else -1
+    snow_7days = snow_stats["Last7DaysIn"] if snow_stats["Last7DaysIn"] != "--" else -1
+    snow_30days = -1
+    snow_total = snow_report["SeasonTotalIn"] if snow_report["SeasonTotalIn"] != "--" else -1
+    snow_base_depth = snow_stats["BaseIn"] if snow_stats["BaseIn"] != "--" else -1
     return resort.ResortActiveRecord(RESORT_NAME, snow_overnight, snow_24hrs,
-                                     snow_48hrs, snow_72hrs, None, None,
+                                     snow_48hrs, snow_72hrs, -1, -1,
                                      snow_total, snow_base_depth, lifts_open, lifts_total,
                                      trails_open, trails_total, COUNTRY,
                                      REGION, PASSES, RESERVATION)

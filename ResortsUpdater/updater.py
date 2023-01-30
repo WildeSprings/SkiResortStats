@@ -203,8 +203,6 @@ if __name__ == "__main__":
                             reservation = N/A,
                             last_updated = %s
                         WHERE resort_name = %s"""
-            cursor.execute(
-                sql, (dt, resort))
         except:
             print("%s had an error updating the database" % (resort))
 

@@ -26,14 +26,14 @@ def GetData():
     trails_open = req_json['trailReport']['open']
 
     # Snow Info
-    snow_overnight = None
-    snow_24hrs = None
-    snow_48hrs = None
-    snow_72hrs = None
-    snow_7days = None
-    snow_30days = None
-    snow_total = None
-    snow_base_depth = None
+    snow_overnight = -1
+    snow_24hrs = -1
+    snow_48hrs = -1
+    snow_72hrs = -1
+    snow_7days = -1
+    snow_30days = -1
+    snow_total = -1
+    snow_base_depth = -1
     for item in req_json['snowReport'][0]['items']:
         if item["duration"] == "overnight":
             snow_overnight = item['amount']

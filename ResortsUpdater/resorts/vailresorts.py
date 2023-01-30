@@ -5,19 +5,19 @@ from . import resort
 
 def GetData(RESORT_NAME, WEBSITE, COUNTRY, REGION, PASSES, RESERVATION):
 
-    snow_overnight = None
-    snow_24hrs = None
-    snow_48hrs = None
-    snow_72hrs = None
-    snow_7days = None
-    snow_30days = None
-    snow_total = None
-    snow_base_depth = None
+    snow_overnight = -1
+    snow_24hrs = -1
+    snow_48hrs = -1
+    snow_72hrs = -1
+    snow_7days = -1
+    snow_30days = -1
+    snow_total = -1
+    snow_base_depth = -1
 
-    lifts_open = None
-    lifts_total = None
-    trails_open = None
-    trails_total = None
+    lifts_open = -1
+    lifts_total = -1
+    trails_open = -1
+    trails_total = -1
 
     headers = {
         'User-Agent':
