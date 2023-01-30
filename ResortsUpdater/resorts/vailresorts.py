@@ -44,7 +44,7 @@ def GetData(RESORT_NAME, WEBSITE, COUNTRY, REGION, PASSES, RESERVATION):
             snow_48hrs = jstring["FortyEightHourSnowfall"]["Inches"]
             snow_72hrs = snow_48hrs
             snow_7days = jstring["SevenDaySnowfall"]["Inches"]
-            snow_30days = None
+            snow_30days = -1
             snow_total = jstring["CurrentSeason"]["Inches"]
             snow_base_depth = jstring["BaseDepth"]["Inches"]
 
