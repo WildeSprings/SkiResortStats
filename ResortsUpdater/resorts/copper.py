@@ -10,7 +10,7 @@ RESERVATION = False
 
 
 def GetData():
-    url = "https://www.coppercolorado.com/api/v1/dor/conditions"
+    url = "https://api.coppercolorado.com/api/v1/dor/conditions"
     headers = {
         "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:107.0) Gecko/20100101 Firefox/107.0"

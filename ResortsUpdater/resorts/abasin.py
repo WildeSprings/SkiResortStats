@@ -45,7 +45,7 @@ def GetData():
     snow_72hrs = float(snow_soup[8].get_text().replace('"',''))
     snow_7days = -1
     snow_30days = -1
-    snow_total = float(snow_soup[10].get_text().replace('"',''))
+    snow_total = -1 # float(snow_soup[10].get_text().replace('"',''))
     snow_base_depth = float(snow_soup[9].get_text().replace('"',''))
     return resort.ResortActiveRecord(RESORT_NAME, snow_overnight, snow_24hrs,
                                      snow_48hrs, snow_72hrs, -1, -1,
